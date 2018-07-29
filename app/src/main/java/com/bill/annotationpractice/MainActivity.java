@@ -11,6 +11,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        startDownloadConst(-1);
+
         startDownload(DownLoadStateEnum.WAIT);
 
         startDownload(DownLoadState.WAIT);
@@ -25,6 +27,9 @@ public class MainActivity extends AppCompatActivity {
     private void startDownload(@DownLoadState int status) {
 
         switch (status) {
+            case DownLoadState.NONE:
+                MLog.log("none");
+                break;
             case DownLoadState.WAIT:
                 MLog.log("start download");
                 break;
@@ -36,9 +41,6 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case DownLoadState.ERROR:
                 MLog.log("error");
-                break;
-            case DownLoadState.NONE:
-                MLog.log("none");
                 break;
         }
 
@@ -52,6 +54,9 @@ public class MainActivity extends AppCompatActivity {
     private void startDownload(DownLoadStateEnum status) {
 
         switch (status) {
+            case NONE:
+                MLog.log("none");
+                break;
             case WAIT:
                 MLog.log("start download");
                 break;
@@ -64,8 +69,32 @@ public class MainActivity extends AppCompatActivity {
             case ERROR:
                 MLog.log("error");
                 break;
-            case NONE:
+        }
+
+    }
+
+    /**
+     * 常量
+     *
+     * @param status
+     */
+    private void startDownloadConst(int status) {
+
+        switch (status) {
+            case DownloadStatusConst.NONE:
                 MLog.log("none");
+                break;
+            case DownloadStatusConst.WAIT:
+                MLog.log("start download");
+                break;
+            case DownloadStatusConst.DOWNLOADING:
+                MLog.log("download...");
+                break;
+            case DownloadStatusConst.COMPLETE:
+                MLog.log("complete");
+                break;
+            case DownloadStatusConst.ERROR:
+                MLog.log("error");
                 break;
         }
 
