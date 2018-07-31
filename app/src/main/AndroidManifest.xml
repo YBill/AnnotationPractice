@@ -10,8 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
-        </activity>
-        <activity android:name=".fun.AnnotationFunActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,6 +17,9 @@
             </intent-filter>
 
         </activity>
+        <activity android:name=".fun.AnnotationFunActivity">
+        </activity>
+        <activity android:name=".demo.DemoActivity"></activity>
     </application>
 
 </manifest>
