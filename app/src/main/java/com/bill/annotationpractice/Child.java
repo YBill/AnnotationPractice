@@ -14,4 +14,6 @@ public class Child {
     @Txtization
     String cName;
 
+    int age;
+
 }
